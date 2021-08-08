@@ -393,7 +393,8 @@ function process_commands_query(query, mapKey, userid) {
     let out = null;
 
     const regex = /^nigga ([a-zA-Z]+)(.+?)?$/;
-    const m = query.toLowerCase().match(regex);
+    const regex2 = /^niggas ([a-zA-Z]+)(.+?)?$/;
+    const m = query.toLowerCase().match(regex || regex2);
     if (m && m.length) {
         const cmd = (m[1]||'').trim();
         const args = (m[2]||'').trim();
