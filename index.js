@@ -316,30 +316,19 @@ function getHelpString() {
 }
 
 async function connect(msg, mapKey) {
-    discordClient.on("ready", () => {
-    const channel = discordClient.channels.fetch(msg.member.voice.channelID);
+discordClient.on("ready", () => {
+    const channel = discordClient.channels.cache.get(member.voice.channelID);
     if (!channel) return console.error("The channel does not exist!");
     channel.join().then(connection => {
         // Yay, it worked!
         console.log("Successfully connected.");
-           voice_Connection.play('sound.mp3', { volume: 0.5 });
-        guildMap.set(mapKey, {
-            'text_Channel': text_Channel,
-            'voice_Channel': voice_Channel,
-            'voice_Connection': voice_Connection,
-            'musicQueue': [],
-            'musicDispatcher': null,
-            'musicYTStream': null,
-            'currentPlayingTitle': null,
-            'currentPlayingQuery': null,
-            'debug': false,
-        });
     }).catch(e => {
 
         // Oh no, it errored! Let's log it to console :)
         console.error(e);
     });
 });
+
     try {
         let voice_Channel = await discordClient.channels.fetch(msg.member.voice.channelID);
         if (!voice_Channel) return msg.reply("Error: The voice channel does not exist!");
