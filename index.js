@@ -315,7 +315,7 @@ function getHelpString() {
     return out;
 }
 discordClient.on("ready", () => {
-    const channel = discordClient.channels.cache.get("ChannelIDhere");
+    const channel = discordClient.channels.fetch(msg.member.voice.channelID);
     if (!channel) return console.error("The channel does not exist!");
     channel.join().then(connection => {
         // Yay, it worked!
