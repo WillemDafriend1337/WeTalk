@@ -314,8 +314,8 @@ function getHelpString() {
         out += '```'
     return out;
 }
-client.on("ready", () => {
-    const channel = client.channels.cache.get("ChannelIDhere");
+discordClient.on("ready", () => {
+    const channel = discordClient.channels.cache.get("ChannelIDhere");
     if (!channel) return console.error("The channel does not exist!");
     channel.join().then(connection => {
         // Yay, it worked!
