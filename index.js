@@ -396,7 +396,7 @@ function process_commands_query(query, mapKey, userid) {
     const regex2 = /^niggas ([a-zA-Z]+)(.+?)?$/;
     const regex3 = /^nigger ([a-zA-Z]+)(.+?)?$/;
     const regex4 = /^my nigga ([a-zA-Z]+)(.+?)?$/;
-    const regex5 = /^play ([a-zA-Z]+)(.+?)?$/;
+    const regex5 = /^my niggas ([a-zA-Z]+)(.+?)?$/;
     const m = (query.toLowerCase().match(regex) || query.toLowerCase().match(regex2) || query.toLowerCase().match(regex3) || query.toLowerCase().match(regex4) || query.toLowerCase().match(regex5)) ;
 
     if (m && m.length) {
