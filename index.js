@@ -314,7 +314,18 @@ function getHelpString() {
         out += '```'
     return out;
 }
+client.on("ready", () => {
+    const channel = client.channels.cache.get("ChannelIDhere");
+    if (!channel) return console.error("The channel does not exist!");
+    channel.join().then(connection => {
+        // Yay, it worked!
+        console.log("Successfully connected.");
+    }).catch(e => {
 
+        // Oh no, it errored! Let's log it to console :)
+        console.error(e);
+    });
+});
 async function connect(msg, mapKey) {
     try {
         let voice_Channel = await discordClient.channels.fetch(msg.member.voice.channelID);
