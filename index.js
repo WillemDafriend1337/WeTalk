@@ -173,7 +173,7 @@ discordClient.on('ready', () => {
 })
 discordClient.login(DISCORD_TOK)
 
-const PREFIX = '-';
+const PREFIX = '!';
 const _CMD_HELP        = PREFIX + 'help';
 const _CMD_JOIN        = PREFIX + 'join';
 const _CMD_LEAVE       = PREFIX + 'leave';
@@ -396,7 +396,8 @@ function process_commands_query(query, mapKey, userid) {
     const regex2 = /^niggas ([a-zA-Z]+)(.+?)?$/;
     const regex3 = /^nigger ([a-zA-Z]+)(.+?)?$/;
     const regex4 = /^my nigga ([a-zA-Z]+)(.+?)?$/;
-    const m = (query.toLowerCase().match(regex) || query.toLowerCase().match(regex2) || query.toLowerCase().match(regex3) || query.toLowerCase().match(regex4)) ;
+    const regex5 = /^play ([a-zA-Z]+)(.+?)?$/;
+    const m = (query.toLowerCase().match(regex) || query.toLowerCase().match(regex2) || query.toLowerCase().match(regex3) || query.toLowerCase().match(regex4) || query.toLowerCase().match(regex5)) ;
 
     if (m && m.length) {
         const cmd = (m[1]||'').trim() ;
