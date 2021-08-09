@@ -227,10 +227,11 @@ discordClient.on('message', async (msg) => {
             }
         } else if (msg.content.trim().toLowerCase() == _CMD_LEAVE) {
             if (guildMap.has(mapKey)) {
-                 let val = guildMap.get(mapKey);
+                
+                voice_Connection.play('leave.mp3');
+                 let val = setTimeout(guildMap.get(mapKey),3000);
                 if (val.voice_Channel) val.voice_Channel.leave()
-                if (val.voice_Connection) 
-                (voice_Connection.play('leave.mp3')) setTimeout(val.voice_Connection.disconnect(),3000)
+                if (val.voice_Connection) val.voice_Connection.disconnect()
                 if (val.musicYTStream) val.musicYTStream.destroy()
                     guildMap.delete(mapKey)
                 
