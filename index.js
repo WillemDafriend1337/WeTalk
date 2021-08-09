@@ -436,8 +436,11 @@ function process_commands_query(query, mapKey, userid) {
                 out = _CMD_RESUME;
                 break;
             case 'clear':
-                if (args == 'list')
+               
                     out = _CMD_CLEAR;
+                break;
+            case 'leave':
+                    out = _CMD_LEAVE;
                 break;
             case 'list':
                 out = _CMD_QUEUE;
