@@ -228,6 +228,17 @@ discordClient.on('message', async (msg) => {
         } else if (msg.content.trim().toLowerCase() == _CMD_LEAVE) {
             if (guildMap.has(mapKey)) {
                 voice_Connection.play('leave.mp3', { volume: 0.8 });
+                     guildMap.set(mapKey, {
+            'text_Channel': text_Channel,
+            'voice_Channel': voice_Channel,
+            'voice_Connection': voice_Connection,
+            'musicQueue': [],
+            'musicDispatcher': null,
+            'musicYTStream': null,
+            'currentPlayingTitle': null,
+            'currentPlayingQuery': null,
+            'debug': false,
+        });
                 let val = guildMap.get(mapKey);
                 if (val.voice_Channel) val.voice_Channel.leave()
                 if (val.voice_Connection) val.voice_Connection.disconnect()
