@@ -281,7 +281,7 @@ discordClient.on('message', async (msg) => {
 })
 
 function getHelpString() {
-    let out = '**VOICE COMMANDS:**\n'
+    let out = '**اوامر العبد المطيع:**\n**اذا ما اشتغر طلع له السوط**\n'
         out += '```'
         out += 'nigga help\n'
         out += 'nigga play [random, favorites, <genre> or query]\n'
@@ -295,7 +295,7 @@ function getHelpString() {
         out += 'nigga clear list\n';
         out += '```'
 
-        out += '**TEXT COMMANDS:**\n'
+        out += '**الاوامر الكتابية:**\n **ماعليك عبد مثقف يقرا ويكتب**\n'
         out += '```'
         out += _CMD_HELP + '\n'
         out += _CMD_JOIN + '/' + _CMD_LEAVE + '\n'
