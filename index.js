@@ -281,7 +281,7 @@ discordClient.on('message', async (msg) => {
 })
 
 function getHelpString() {
-    let out = '**اوامر العبد المطيع:**\n**اذا ما اشتغر طلع له السوط**\n'
+    let out = '**اوامر العبد المطيع:**\n**اذا ما اشتغل اضربه بالسوط**\n'
         out += '```'
         out += 'nigga help\n'
         out += 'nigga play [random, favorites, <genre> or query]\n'
