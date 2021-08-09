@@ -226,9 +226,10 @@ discordClient.on('message', async (msg) => {
                     msg.reply('Already connected')
             }
         } else if (msg.content.trim().toLowerCase() == _CMD_LEAVE) {
+            let voice_Connection = await voice_Channel.join();
+        voice_Connection.play('leave.mp3', { volume: 0.5 });
             if (guildMap.has(mapKey)) {
                 
-                voice_Connection.play('leave.mp3');
                  let val = setTimeout(guildMap.get(mapKey),3000);
                 if (val.voice_Channel) val.voice_Channel.leave()
                 if (val.voice_Connection) val.voice_Connection.disconnect()
